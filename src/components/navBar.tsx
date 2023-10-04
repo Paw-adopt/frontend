@@ -1,50 +1,97 @@
+"use client"
+import React, {useState} from "react";
+import { Dialog } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+
 /**
  * Represents a navigation bar component.
  * 
  * @returns {JSX.Element} The JSX code that represents the navigation bar.
  */
-export default function NavBar() {
-    return (
-        <header className="bg-white fixed w-full z-20 top-0 left-0 border-">
-            <nav className="w-full flex flex-wrap items-center justify-between px-12 pt-10">
-                <a href="/" className="flex items-center gap-2">
 
-                    <span className="text-pink-700 text-2xl font-bold capitalize">Paw</span>
-                    <span className="text-black text-2xl font-bold capitalize"> adopt</span>
-                </a>
-                <div className="flex md:order-2">
-                    <div className="flex flex-row">
-                        <button type="button"
-                            className="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-3xl text-lg px-6 py-2.5 text-center md:mr-0">
+const navigation = [
+    { name: 'Publica con nosotros', href: '#' },
+    { name: 'Donaciones', href: '#' },
+    { name: 'Adopciones', href: '#' },
+  ]
+  
+export default function NavBar(): JSX.Element {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    
+    return (
+        <header className="absolute inset-x-0 top-0 z-50">
+        <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+          <div className="flex lg:flex-1">
+            <a href="#" className="-m-1.5 p-1.5">
+            <div>
+                <span className="text-pink-700 text-2xl font-bold capitalize">Paw</span>
+                <span className="text-black text-2xl font-bold  capitalize"> adopt</span></div>
+            </a>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                {item.name}
+              </a>
+            ))}
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <button type="button"
+                className="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-3xl text-sm px-6 py-2.5 text-center md:mr-0">
                             Registrarse</button>
-                        <button type="button"
-                            className="text-pink-700 focus:outline-none font-bold text-lg px-6 py-2.5 text-center mr-3 md:mr-0">
+            <button type="button"
+                className="text-pink-700 focus:outline-none font-bold text-sm px-6 py-2.5 text-center mr-3 md:mr-0">
                             Iniciar sesión</button>
-                    </div>
-                    <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-                        <span className="sr-only">Open main menu</span>
-                        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-                        </svg>
-                    </button>
+          </div>
+        </nav>
+        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+          <div className="fixed inset-0 z-50" />
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="flex items-center justify-between">
+              <button
+                type="button"
+                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-500/10">
+                <div className="space-y-2 py-6">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
                 </div>
-                <div className="flex items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                    <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
-                        <li>
-                            <a href="#" className="block py-2 text-black rounded hover:bg-gray-100 md:hover:bg-transparent font-semibold">
-                                Publica con nostros</a>
-                        </li>
-                        <li>
-                            <a href="#" className="block py-2 text-black rounded hover:bg-gray-100 md:hover:bg-transparent font-semibold">
-                                Donaciones</a>
-                        </li>
-                        <li>
-                            <a href="#" className="block py-2 text-black rounded hover:bg-gray-100 md:hover:bg-transparent font-semibold">
-                                Adopciones</a>
-                        </li>
-                    </ul>
+                <div className="py-6">
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-lg font-bold leading-7 text-pink-700 hover:bg-gray-50"
+                  >
+                    Iniciar sesión
+                  </a>
                 </div>
-            </nav>
-        </header>
+              </div>
+            </div>
+          </Dialog.Panel>
+        </Dialog>
+      </header>
     );
 }
