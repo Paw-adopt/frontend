@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import NavBar from "@/components/navBar";
 import HomeImage from "@/images/hompage.jpg"
 
-export default function Example() {
+export default function HomePage() {
 
 
   return (
