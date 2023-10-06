@@ -18,7 +18,7 @@ export default function HomePage() {
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Denle una segunda oportunidad a un animal necesitado, llene su hogar con amor y felicidad
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div data-testid="adopt-button" className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
                 className="rounded-3xl bg-pink-700 px-12 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-pink-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-800"

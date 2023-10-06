@@ -1,4 +1,3 @@
-"use client"
 import React, {useState} from "react";
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -22,7 +21,7 @@ export default function NavBar(): JSX.Element {
         <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="#" className="-m-1.5 p-1.5" data-testid="logo">
             <div>
                 <span className="text-pink-700 text-2xl font-bold capitalize">Paw</span>
                 <span className="text-black text-2xl font-bold  capitalize"> adopt</span></div>
@@ -40,7 +39,7 @@ export default function NavBar(): JSX.Element {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900" data-testid={`nav-link-${item.name}`}>
                 {item.name}
               </a>
             ))}
@@ -54,7 +53,7 @@ export default function NavBar(): JSX.Element {
                             Iniciar sesión</button>
           </div>
         </nav>
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen} data-testid = "mobile-menu">
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
@@ -75,6 +74,7 @@ export default function NavBar(): JSX.Element {
                       key={item.name}
                       href={item.href}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      data-testid={`nav-link-${item.name}`}
                     >
                       {item.name}
                     </a>
@@ -84,6 +84,7 @@ export default function NavBar(): JSX.Element {
                   <a
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-lg font-bold leading-7 text-pink-700 hover:bg-gray-50"
+                    data-testid="login-link"
                   >
                     Iniciar sesión
                   </a>
