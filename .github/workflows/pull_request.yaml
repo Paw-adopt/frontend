@@ -2,10 +2,7 @@ name: PR reviewer
 
 on:
   push:
-    branches:
-      - main
-      - stage
-      - development
+    branches: [main, stage, development]
 
 jobs:
   build:
