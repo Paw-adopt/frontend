@@ -1,0 +1,27 @@
+name: PR reviewer
+
+on:
+  push:
+    branches:
+      - main
+      - stage
+      - development
+
+jobs:
+  mi_trabajo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run tests
+      run: npm test
+
+    - name: Approve and merge pull request
+      if: success()  # Se ejecutará solo si las pruebas pasan
+      run: |
+        gh pr review ${{ github.event.pull_request.number }} --approve
+        gh pr merge ${{ github.event.pull_request.number }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
