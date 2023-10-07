@@ -9,13 +9,13 @@ export default function Footer(){
         </span>
         <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
             <li>
-                <a data-testid = "privacy-policy" href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                <a data-testid = "privacy-policy" href="javascript:void(0" className="mr-4 hover:underline md:mr-6">Privacy Policy</a>
             </li>
             <li>
-                <a data-testid = "contact" href="#" className="mr-4 hover:underline md:mr-6">Contact</a>
+                <a data-testid = "contact" href="javascript:void(0" className="mr-4 hover:underline md:mr-6">Contact</a>
             </li>
             <li>
-                <a data-testid = "github" href="#" className="hover:underline">Github</a>
+                <a data-testid = "github" href="https://github.com/Paw-adopt" className="hover:underline">Github</a>
             </li>
         </ul>
         </div>
