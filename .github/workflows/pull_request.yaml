@@ -24,7 +24,7 @@ jobs:
       run: npm test
 
     - name: Approve and merge pull request
-      if: success()  # Se ejecutará solo si las pruebas pasan
+      if: success()
       run: |
         gh pr review ${{ github.event.pull_request.number }} --approve
         gh pr merge ${{ github.event.pull_request.number }}
