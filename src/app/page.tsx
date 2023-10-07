@@ -1,7 +1,6 @@
 "use client"
 import Footer from "@/components/footer";
 import NavBar from "@/components/navBar";
-import HomeImage from "@/images/hompage.jpg"
 
 export default function HomePage() {
 
@@ -26,7 +25,6 @@ export default function HomePage() {
                 ¡Adopta!
               </a>
             </div>
-            <img src="" alt="" />
           </div>
         </div>
       </div>
