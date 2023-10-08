@@ -18,7 +18,10 @@ jobs:
         node-version: '18'
 
     - name: Run tests
-      run: npm test
+      run: | 
+        npm intsall
+        npm test
+
 
     - name: Approve and merge pull request
       if: success()
