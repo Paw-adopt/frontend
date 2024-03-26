@@ -28,7 +28,7 @@ describe('NavBar', () => {
 
   it('should have the correct href values for the navigation links', () => {
     const navLinks = screen.getAllByTestId(/nav-link-.*/);
-    expect(navLinks[0]).toHaveAttribute('href', '#');
+    expect(navLinks[0]).toHaveAttribute('href', '/publica-con-nosotros');
     expect(navLinks[1]).toHaveAttribute('href', '#');
     expect(navLinks[2]).toHaveAttribute('href', '#');
   });
