@@ -9,7 +9,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
  */
 
 const navigation = [
-    { name: 'Publica con nosotros', href: '#' },
+    { name: 'Publica con nosotros', href: '/publica-con-nosotros' },
     { name: 'Donaciones', href: '#' },
     { name: 'Adopciones', href: '#' },
   ]
@@ -21,7 +21,7 @@ export default function NavBar(): JSX.Element {
         <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5" data-testid="logo">
+            <a href="/" className="-m-1.5 p-1.5" data-testid="logo">
             <div>
                 <span className="text-pink-700 text-2xl font-bold capitalize">Paw</span>
                 <span className="text-black text-2xl font-bold  capitalize"> adopt</span></div>
