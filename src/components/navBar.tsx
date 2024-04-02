@@ -10,7 +10,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
     { name: 'Publica con nosotros', href: '/publica-con-nosotros' },
-    { name: 'Donaciones', href: '#' },
+    { name: 'Contacto', href: '/contacto' },
     { name: 'Adopciones', href: '#' },
   ]
   
