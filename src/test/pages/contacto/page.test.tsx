@@ -1,6 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ContactPage from '@/app/contacto/page';
+
+afterEach(cleanup);
 
 describe('ContactPage', () => {
   beforeEach(() => {
