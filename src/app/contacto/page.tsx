@@ -7,7 +7,7 @@ import NavBar from '@/components/navBar';
 import Footer from '@/components/footer';
 
 
-export default function Example() {
+export default function ContactPage() {
   const [agreed, setAgreed] = useState(false)
 
   function classNames(...classes: string[]) {
