@@ -12,7 +12,7 @@ export default function Footer(){
                 <a data-testid = "privacy-policy" href="javascript:void(0)" className="mr-4 hover:underline md:mr-6">Privacy Policy</a>
             </li>
             <li>
-                <a data-testid = "contact" href="javascript:void(0)" className="mr-4 hover:underline md:mr-6">Contact</a>
+                <a data-testid = "contact" href="/contacto" className="mr-4 hover:underline md:mr-6">Contact</a>
             </li>
             <li>
                 <a data-testid = "github" href="https://github.com/Paw-adopt" className="hover:underline">Github</a>
