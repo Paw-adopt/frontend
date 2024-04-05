@@ -6,23 +6,19 @@ describe('Footer', () => {
   beforeEach(() => { 
     render(<Footer />); 
   });
-  it('should render the copyright text', () => {
-    const copyright = screen.getByTestId('copyright');
-    expect(copyright).toBeInTheDocument();
-  });
 
-  it('should render the Privacy Policy link', () => {
-    const privacyPolicyLink = screen.getByTestId('privacy-policy');
+  it('should render the Facebook icon', () => {
+    const privacyPolicyLink = screen.getByTestId('facebook-link');
     expect(privacyPolicyLink).toBeInTheDocument();
   });
 
-  it('should render the Contact link', () => {
-    const contactLink = screen.getByTestId('contact');
+  it('should render the Instagram icon', () => {
+    const contactLink = screen.getByTestId('instagram-link');
     expect(contactLink).toBeInTheDocument();
   });
 
-  it('should render the Github link', () => {
-    const githubLink = screen.getByTestId('github');
+  it('should render the Github icon', () => {
+    const githubLink = screen.getByTestId('github-link');
     expect(githubLink).toBeInTheDocument();
   });
 });
