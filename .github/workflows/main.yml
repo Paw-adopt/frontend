@@ -1,8 +1,8 @@
 name: Auto PR reviewer
 
-on:  
-  pull_request:
-    types: [opened, reopened, labeled, edited]
+on:
+  push:
+    branches: [ main, stage, development]
 
 permissions: 
   pull-requests: write
