@@ -1,8 +1,7 @@
 name: Auto PR reviewer
 
 on:
-  push:
-    branches: [ main, stage, development]
+  pull_request
 
 permissions: 
   pull-requests: write
