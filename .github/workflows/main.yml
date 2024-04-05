@@ -4,14 +4,9 @@ on:
   pull_request:
     types: [opened, reopened, labeled, edited]
 
-  pull_request_review:
-      types: [dismissed]
-
 permissions: 
   pull-requests: write
   contents: read
-
-
 
 jobs:
   autoapproval:
@@ -19,16 +14,15 @@ jobs:
     name: Autoapproval
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
     - name: Run tests
       run: | 
         npm install
         npm test
 
     - name: Approve pull request
-      uses: dkhmelenko/autoapproval@v1.0
-
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-    
-        
-      
+      uses: hmarr/auto-approve-action@v2.0.0
+      with:
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
