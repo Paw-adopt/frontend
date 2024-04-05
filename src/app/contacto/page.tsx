@@ -86,6 +86,7 @@ export default function ContactPage() {
               <Switch.Group as="div" className="flex gap-x-4 sm:col-span-2">
                 <div className="flex h-6 items-center">
                   <Switch
+                    data-testid="switch"
                     checked={agreed}
                     onChange={setAgreed}
                     className={classNames(
@@ -114,6 +115,7 @@ export default function ContactPage() {
             </div>
             <div className="mt-10">
               <button
+                data-testid="submit-button"
                 disabled={!agreed}
                 type="submit"
                 className={agreed ? `block w-full rounded-md bg-pink-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-pink-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`: `block w-full rounded-md bg-gray-300 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm cursor-not-allowed`}

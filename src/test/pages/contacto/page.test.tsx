@@ -30,10 +30,10 @@ describe('ContactPage', () => {
   });
 
   it('should enable the submit button when the switch is checked', () => {
-    const switchButton = screen.getByRole('checkbox', { name: /agree to policies/i });
+    const switchButton = screen.getByTestId('switch');
     fireEvent.click(switchButton);
 
-    const submitButton = screen.getByRole('button', { name: /hablemos/i });
+    const submitButton = screen.getByTestId('submit-button');
     expect(submitButton).not.toBeDisabled();
   });
 });
