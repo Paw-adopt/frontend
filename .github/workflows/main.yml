@@ -2,10 +2,15 @@ name: Auto PR reviewer
 
 on:  
   pull_request:
-    branches: [main, stage, development]
+    types: [opened, reopened, labeled, edited]
+
+  pull_request_review:
+      types: [dismissed]
 
 permissions: 
-  pull-requests: read
+  pull-requests: write
+  contents: read
+
 
 
 jobs:
