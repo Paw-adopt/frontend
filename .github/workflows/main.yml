@@ -2,7 +2,7 @@ name: Auto PR reviewer
 
 on:  
   pull_request:
-       branches: [main, stage, development]
+    branches: [main, stage, development]
 
 permissions: 
   pull-requests: read
@@ -23,7 +23,7 @@ jobs:
       uses: dkhmelenko/autoapproval@v1.0
 
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
     
         
       
