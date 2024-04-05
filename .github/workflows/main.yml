@@ -1,0 +1,29 @@
+name: Auto PR reviewer
+
+on:  
+  pull_request:
+       branches: [main, stage, development]
+
+permissions: 
+  pull-requests: read
+
+
+jobs:
+  autoapproval:
+    runs-on: ubuntu-latest
+    name: Autoapproval
+
+    steps:
+    - name: Run tests
+      run: | 
+        npm install
+        npm test
+
+    - name: Approve pull request
+      uses: dkhmelenko/autoapproval@v1.0
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+        
+      
