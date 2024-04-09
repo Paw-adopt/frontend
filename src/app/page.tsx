@@ -19,7 +19,7 @@ export default function HomePage() {
             </p>
             <div data-testid="adopt-button" className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="/adopciones"
                 className="rounded-3xl bg-pink-700 px-12 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-pink-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-800"
               >
                 ¡Adopta!
