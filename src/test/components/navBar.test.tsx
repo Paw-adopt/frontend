@@ -30,7 +30,7 @@ describe('NavBar', () => {
     const navLinks = screen.getAllByTestId(/nav-link-.*/);
     expect(navLinks[0]).toHaveAttribute('href', '/publica-con-nosotros');
     expect(navLinks[1]).toHaveAttribute('href', '/contacto');
-    expect(navLinks[2]).toHaveAttribute('href', '#');
+    expect(navLinks[2]).toHaveAttribute('href', '/adopciones');
   });
 
   it('should render the registration button', () => {
