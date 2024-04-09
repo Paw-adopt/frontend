@@ -47,7 +47,7 @@ export default function PublishWithUs() {
                       {features.map((feature) => (
                       <article key={feature.name} className="relative pl-9">
                           <dt className="inline font-semibold text-gray-900">
-                          <feature.icon className="absolute left-1 top-1 h-5 w-5 text-indigo-600" aria-hidden="true" />
+                          <feature.icon className="absolute left-1 top-1 h-5 w-5 text-[#FFB350]" aria-hidden="true" />
                           {feature.name}
                           </dt>{' '}
                           <dd className="inline">{feature.description}</dd>
