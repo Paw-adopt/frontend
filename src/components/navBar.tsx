@@ -11,7 +11,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 const navigation = [
     { name: 'Publica con nosotros', href: '/publica-con-nosotros' },
     { name: 'Contacto', href: '/contacto' },
-    { name: 'Adopciones', href: '#' },
+    { name: 'Adopciones', href: '/adopciones' },
   ]
   
 export default function NavBar(): JSX.Element {
