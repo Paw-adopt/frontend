@@ -104,10 +104,10 @@ export default function ContactPage() {
                     />
                   </Switch>
                 </div>
-                <Switch.Label className="text-sm leading-6 text-gray-600">
-                  By selecting this, you agree to our{' '}
-                  <a href="#" className="font-semibold text-indigo-600">
-                    privacy policy
+                <Switch.Label passive className="text-sm leading-6 text-gray-600">
+                  Al seleccionar esto, usted acepta nuestra{' '}
+                  <a href="/politica-de-privacidad" className="font-semibold text-indigo-600">
+                    política de privacidad
                   </a>
                   .
                 </Switch.Label>
